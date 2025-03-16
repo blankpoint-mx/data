@@ -147,7 +147,8 @@ textarea {
 .preloader .preloader__img img {
     display: inline-block;
     position: absolute;
-    width: 300px; /* Tamaño reducido del logo */
+    width: 200px; /* Ajusta según el tamaño original de preloader.png */
+    height: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -207,7 +208,7 @@ textarea {
 }
 
 .headerwrap__logo img {
-    width: 45px; /* Tamaño reducido del logo */
+    width: 350px; /* Tamaño reducido del logo */
     height: auto;
 }
 
