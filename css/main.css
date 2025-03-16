@@ -36,7 +36,7 @@ Filename      : main.css
 }
 
 body {
-    font-family: 'Lato', sans-serif; /* Fuente para el cuerpo (textos extensos) */
+    font-family: 'Poppins';
     font-size: 15px;
     font-weight: 400;
     background-color: #000000; /* Fondo negro */
@@ -63,7 +63,6 @@ label {
     font-weight: 600;
     text-transform: uppercase;
     color: #ffffff;
-    font-family: 'Lato', sans-serif; /* Fuente para etiquetas */
 }
 
 input,
@@ -75,7 +74,6 @@ textarea {
     background: #333333; /* Fondo gris para inputs */
     border: 2px solid #ffffff; /* Borde blanco */
     border-radius: 3px;
-    font-family: 'Lato', sans-serif; /* Fuente para inputs */
 }
 
 textarea {
@@ -91,7 +89,6 @@ textarea {
     color: #000000; /* Texto negro */
     padding: 10px 20px;
     border-radius: 50px;
-    font-family: 'Lato', sans-serif; /* Fuente para botones */
 }
 
 .linkbtn:hover {
@@ -150,7 +147,7 @@ textarea {
 .preloader .preloader__img img {
     display: inline-block;
     position: absolute;
-    width: 80px; /* Tamaño reducido del logo */
+    width: 300px; /* Tamaño reducido del logo */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -163,7 +160,7 @@ textarea {
 */
 
 #headermain {
-    padding: 10px 0 10px;
+    padding: 5px 0 px;
     position: fixed;
     width: 100%;
     z-index: 3;
@@ -196,7 +193,6 @@ textarea {
     z-index: 1;
     padding: 5px 15px;
     border-radius: 50px;
-    font-family: 'Poppins', sans-serif; /* Fuente para títulos de secciones (navegación) */
 }
 
 .navpage__wrap li a:hover {
@@ -211,7 +207,7 @@ textarea {
 }
 
 .headerwrap__logo img {
-    width: 80px; /* Tamaño reducido del logo */
+    width: 45px; /* Tamaño reducido del logo */
     height: auto;
 }
 
@@ -303,7 +299,6 @@ textarea {
     color: #ffffff; /* Texto blanco */
     padding: 5px 10px;
     border-radius: 50px;
-    font-family: 'Poppins', sans-serif; /* Fuente para títulos de secciones (navegación móvil) */
 }
 
 .overlay__listnav li a:hover {
@@ -335,15 +330,13 @@ textarea {
     color: #ffffff;
     display: inline-block;
     background: #333333; /* Fondo gris */
-    font-family: 'Barlow SemiCondensed', sans-serif; /* Fuente para subtítulos */
 }
 
 .infohero__title {
     font-size: 80px;
-    font-weight: 700;
+    font-weight: 600;
     text-shadow: none; /* Elimina la sombra amarilla */
     color: #ffffff;
-    font-family: 'Montserrat', sans-serif; /* Fuente para títulos principales */
 }
 
 .infohero__title span {
@@ -354,16 +347,15 @@ textarea {
     height: 350px;
     width: 350px;
     margin: 0 auto;
-    position: relative;
 }
 
 .heroimg .heroimg__poto {
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
+    border-radius: 10px; /* Elimina el círculo rosa, usa bordes redondeados */
+    height: 350px;
+    width: 350px;
     object-fit: cover;
-    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.5);
-    border: 2px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.5); /* Sombra gris */
+    border: 2px solid #ffffff; /* Borde blanco */
 }
 
 #typed-text {
@@ -372,7 +364,6 @@ textarea {
     font-weight: 600;
     text-transform: uppercase;
     color: #ffffff;
-    font-family: 'Barlow SemiCondensed', sans-serif; /* Fuente para subtítulos */
 }
 
 .herolink {
@@ -393,9 +384,8 @@ textarea {
 
 .abouthero h3 {
     font-size: 50px;
-    font-weight: 700;
+    font-weight: 600;
     color: #ffffff;
-    font-family: 'Montserrat', sans-serif; /* Fuente para títulos principales */
 }
 
 .infoabout__list {
@@ -410,15 +400,6 @@ textarea {
     color: #ffffff;
     letter-spacing: 1px;
     font-weight: 700;
-    font-family: 'Lato', sans-serif; /* Fuente para cuerpo de texto */
-}
-
-.infoabout__wrap p {
-    font-family: 'Lato', sans-serif; /* Fuente para cuerpo de texto */
-}
-
-.aboutlink {
-    font-family: 'Lato', sans-serif; /* Fuente para el botón */
 }
 
 /*
@@ -441,11 +422,6 @@ textarea {
     font-size: 30px;
     font-weight: 700;
     color: #ffffff;
-    font-family: 'Montserrat', sans-serif; /* Fuente para números grandes */
-}
-
-.counterwrap p {
-    font-family: 'Roboto Condensed', sans-serif; /* Fuente para leyendas */
 }
 
 .wrapservice {
@@ -462,13 +438,8 @@ textarea {
 
 .wrapservice__title {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
     color: #ffffff;
-    font-family: 'Barlow SemiCondensed', sans-serif; /* Fuente para subtítulos */
-}
-
-.wrapservice p {
-    font-family: 'Lato', sans-serif; /* Fuente para cuerpo de texto */
 }
 
 /*
@@ -553,7 +524,6 @@ textarea {
     cursor: pointer;
     border: 1px solid #ffffff;
     color: #ffffff;
-    font-family: 'Poppins', sans-serif; /* Fuente para títulos de secciones (filtros) */
 }
 
 #filterwrap li.active {
@@ -575,9 +545,8 @@ textarea {
 
 .contactdetail__title {
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 600;
     color: #ffffff;
-    font-family: 'Montserrat', sans-serif; /* Fuente para títulos principales */
 }
 
 .contactdetail__list {
@@ -593,11 +562,6 @@ textarea {
 .contactdetail__span {
     font-weight: 600;
     color: #ffffff;
-    font-family: 'Lato', sans-serif; /* Fuente para cuerpo de texto */
-}
-
-.contactdetail p {
-    font-family: 'Lato', sans-serif; /* Fuente para cuerpo de texto */
 }
 
 .contactdetail__sosmed {
@@ -629,5 +593,4 @@ textarea {
     font-size: 13px;
     letter-spacing: 1px;
     color: #ffffff;
-    font-family: 'Roboto Condensed', sans-serif; /* Fuente para leyendas (footer) */
 }
