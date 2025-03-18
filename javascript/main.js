@@ -32,12 +32,12 @@ const freemaninit = (function() {
     var cursor = document.querySelector(".cursor");
     var textArrayIndex = 0;
     var charIndex = 0;
-    var textArray = ["Diseños Exlusivos.", "Sin Complicaciones.", "Confianza Total.", "Cerca e Ti."];
+    var textArray = ["Diseños Exlusivos.", "Sin Complicaciones.", "Confianza Total.", "Cerca de Ti."];
     var year = new Date().getFullYear();
     var revealPoint = 150;
     var interval = 0;
     var loop = 0;
-    //var burger = document.querySelector('.mobilenav');
+
     //detect mobile device
     const isMobile = {
         Android: function() {
@@ -59,12 +59,14 @@ const freemaninit = (function() {
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
+
     // loadder page
     const loadder = function(e) {
         setTimeout(() => {
             document.querySelector(".preloader").style.display = "none";
         }, 1000);
     };
+
     // GLightbox
     const glight = function(e) {
         GLightbox({
@@ -72,6 +74,7 @@ const freemaninit = (function() {
         });
         GLightbox();
     };
+
     // shuffle portfolio
     const portofolio = function(e) {
         var myShuffle = new Shuffle(porto, {
@@ -88,15 +91,15 @@ const freemaninit = (function() {
         for (var i = 0; i < btns.length; i++) {
             btns[i].addEventListener("click", function(e) {
                 document.querySelector('.active').classList.remove('active');
-                (document.querySelector('.active')) ? document.querySelector('.active').classList.remove('active'): '';
+                (document.querySelector('.active')) ? document.querySelector('.active').classList.remove('active') : '';
                 this.classList.add('active');
                 myShuffle.filter(e.target.dataset.group);
             });
-        };
+        }
     };
+
     // scroll spy 
     const scrolspy = function(e) {
-        // for clickable event
         menuSection.forEach(v => {
             v.onclick = (() => {
                 setTimeout(() => {
@@ -105,10 +108,9 @@ const freemaninit = (function() {
                 }, 300)
             });
         });
-        // for window scroll spy event
         window.onscroll = (() => {
             mainSection.forEach((v, i) => {
-                let rect = v.getBoundingClientRect().y
+                let rect = v.getBoundingClientRect().y;
                 if (rect < window.innerHeight - 100) {
                     menuSection.forEach(v => v.classList.remove('activelink'));
                     menuSection[i].classList.add('activelink');
@@ -116,6 +118,7 @@ const freemaninit = (function() {
             });
         });
     };
+
     //animated typed init ------------------------
     const erase = function(e) {
         if (charIndex > 0) {
@@ -130,8 +133,9 @@ const freemaninit = (function() {
                 textArrayIndex = 0;
             }
             setTimeout(typeanimation, 1000);
-        };
+        }
     };
+
     const typeanimation = function(e) {
         if (charIndex <= textArray[textArrayIndex].length - 1) {
             cursor.classList.remove('blink');
@@ -143,56 +147,54 @@ const freemaninit = (function() {
             setTimeout(erase, 1000);
         }
     };
+
     /* scroll counter */
     counters.forEach(function(item) {
-        item.counterAlreadyFired = false
-        item.counterSpeed = item.getAttribute("data-Speed") / 45
-        item.counterTarget = +item.innerText
-        item.counterCount = 0
-        item.counterStep = item.counterTarget / item.counterSpeed
+        item.counterAlreadyFired = false;
+        item.counterSpeed = item.getAttribute("data-Speed") / 45;
+        item.counterTarget = +item.innerText;
+        item.counterCount = 0;
+        item.counterStep = item.counterTarget / item.counterSpeed;
         item.updateCounter = function() {
-            item.counterCount = item.counterCount + item.counterStep
-            item.innerText = Math.ceil(item.counterCount)
+            item.counterCount = item.counterCount + item.counterStep;
+            item.innerText = Math.ceil(item.counterCount);
             if (item.counterCount < item.counterTarget) {
-                setTimeout(item.updateCounter, item.counterSpeed)
+                setTimeout(item.updateCounter, item.counterSpeed);
             } else {
-                item.innerText = item.counterTarget
+                item.innerText = item.counterTarget;
             }
-        }
+        };
     });
+
     const counternumber = function() {
         const isScrolledIntoView = function(el) {
             var rect = el.getBoundingClientRect();
             var elemTop = rect.top;
             var elemBottom = rect.bottom;
-            // Only completely visible elements return true:
             var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
-            // Partially visible elements return true:
-            //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
             return isVisible;
         };
         counter.forEach(function(item, id) {
-            if (!isScrolledIntoView(item)) return
-            item.updateCounter()
-            item.counterAlreadyFired = true
+            if (!isScrolledIntoView(item)) return;
+            item.updateCounter();
+            item.counterAlreadyFired = true;
         });
     };
+
     // click button menu burger
     const buttonclick = function(e) {
-        // menu mobile toggle
         mobilenav.addEventListener("click", function(e) {
-            //your handler here
             this.classList.toggle('active');
             body.classList.toggle('openmenu');
         }, false);
-        // mobile link navigation 
         for (var i = 0; i < mobilelink.length; i++) {
             mobilelink[i].addEventListener('click', function(e) {
                 mobilenav.classList.toggle('active');
                 body.classList.toggle('openmenu');
             }, false);
-        };
+        }
     };
+
     // services slider 
     const servicesslider = function(e) {
         function autoplay(run) {
@@ -217,18 +219,18 @@ const freemaninit = (function() {
             function createDiv(className) {
                 var div = document.createElement("div");
                 var classNames = className.split(" ");
-                classNames.forEach((name) => div.classList.add(name))
-                return div
+                classNames.forEach((name) => div.classList.add(name));
+                return div;
             };
 
             function wrapperMarkup(remove) {
                 if (remove) {
-                    var parent = wrapper.parentNode
+                    var parent = wrapper.parentNode;
                     while (wrapper.firstChild)
                         parent.insertBefore(wrapper.firstChild, wrapper);
                     removeElement(wrapper);
-                    return
-                };
+                    return;
+                }
                 wrapper = createDiv("navigation-wrapper");
                 slider.container.parentNode.appendChild(wrapper);
                 wrapper.appendChild(slider.container);
@@ -237,23 +239,23 @@ const freemaninit = (function() {
             function dotMarkup(remove) {
                 if (remove) {
                     removeElement(dots);
-                    return
-                };
-                dots = createDiv("dots")
+                    return;
+                }
+                dots = createDiv("dots");
                 slider.track.details.slides.forEach((_e, idx) => {
                     var dot = createDiv("dot");
-                    dot.addEventListener("click", () => slider.moveToIdx(idx))
+                    dot.addEventListener("click", () => slider.moveToIdx(idx));
                     dots.appendChild(dot);
                 });
                 wrapper.appendChild(dots);
             };
 
             function updateClasses() {
-                var slide = slider.track.details.rel
+                var slide = slider.track.details.rel;
                 Array.from(dots.children).forEach(function(dot, idx) {
                     idx === slide ?
                         dot.classList.add("dot--active") :
-                        dot.classList.remove("dot--active")
+                        dot.classList.remove("dot--active");
                 });
             };
 
@@ -273,6 +275,7 @@ const freemaninit = (function() {
                 markup(true);
             });
         };
+
         var slider = new KeenSlider(sliderService, {
             loop: true,
             mode: "free-snap",
@@ -299,6 +302,7 @@ const freemaninit = (function() {
                 autoplay(true);
             }
         }, [navigation]);
+
         sliderService.addEventListener("mouseover", (e) => {
             autoplay(false);
         });
@@ -307,60 +311,50 @@ const freemaninit = (function() {
         });
         autoplay(true);
     };
+
     // page scroll
     const scrollpage = function(e) {
-        // add fixid class
         if (window.pageYOffset > 0) {
             header.classList.add('fixid');
         } else {
             header.classList.remove('fixid');
         }
     };
+
     //binds event ----------------------------
     const bindEvents = function(e) {
-        // window onbuffer
         window.onbeforeunload = function(e) {
-            // allways force page to scroll top on refresh
             window.scrollTo(0, 0);
         };
-        // window load
         window.addEventListener('load', (e) => {
-            // page load
             loadder();
         });
-        // document load
         window.addEventListener('DOMContentLoaded', (e) => {
-            // button event 
             buttonclick();
-            //type animation 
             typeanimation();
-            // slider service 
             servicesslider();
-            // portfolio 
             portofolio();
-            // glightbox 
             glight();
-            // year 
             yearele.innerHTML = year;
         });
         window.addEventListener("scroll", (e) => {
-            // scrollspy
             scrolspy();
-            // scroll window 
             scrollpage();
-            // counter 
             counternumber();
         });
     };
-    // init - initilizes elements and events
+
+    // init - initializes elements and events
     const AppInit = function(e) {
         bindEvents();
     };
+
     return {
         AppInit: AppInit
     };
 }());
-//initilizing app
+
+//initializing app
 freemaninit.AppInit();
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -368,29 +362,52 @@ document.addEventListener('DOMContentLoaded', function() {
     const items = document.querySelectorAll('.reviewitem');
     let currentIndex = 0;
     const totalItems = items.length;
-    const visibleItems = 3;
-    const itemWidth = 100 / visibleItems; // Ancho de cada grupo de 3
+
+    // Clonar los elementos para un bucle infinito
+    const slideContainer = document.querySelector('.reviewslide');
+    for (let i = 0; i < totalItems; i++) {
+        const clone = items[i].cloneNode(true);
+        slideContainer.appendChild(clone);
+    }
+
+    function getVisibleItems() {
+        return window.innerWidth < 768 ? 1 : 3;
+    }
 
     function updateSlide() {
-        const offset = -(currentIndex * (100 / totalItems)) * (totalItems / visibleItems);
+        const visibleItems = getVisibleItems();
+        const itemWidthPercentage = 100 / visibleItems;
+        const marginAdjustment = visibleItems === 1 ? 5 : 2;
+        const displacementFactor = 1;
+        const offset = -(currentIndex * (itemWidthPercentage + marginAdjustment) * displacementFactor);
         slide.style.transform = `translateX(${offset}%)`;
     }
 
     function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalItems;
+        const visibleItems = getVisibleItems();
+        currentIndex++;
+        if (currentIndex >= totalItems) {
+            currentIndex = 0;
+            // Usa una transición suave para el reinicio
+            slide.style.transition = 'transform 0.5s ease-in-out'; // Animación al reiniciar
+            updateSlide();
+            // Reinicia la transición normal después del movimiento
+            setTimeout(() => {
+                slide.style.transition = 'transform 0.5s ease-in-out';
+            }, 500);
+        }
         updateSlide();
     }
 
-    // Cambia cada 5 segundos
     setInterval(nextSlide, 5000);
-
-    // Inicializa la primera posición
     updateSlide();
+
+    window.addEventListener('resize', updateSlide);
 });
 
 // Hacer que el logo regrese al inicio con desplazamiento suave
 document.querySelector('.logo').addEventListener('click', function(e) {
-    e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+    e.preventDefault();
     window.scrollTo({
         top: 0,
         behavior: 'smooth'

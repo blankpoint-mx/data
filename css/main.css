@@ -208,7 +208,7 @@ textarea {
 }
 
 .headerwrap__logo img {
-    width: 250px; /* Tamaño reducido del logo */
+    width: 180px; /* Tamaño reducido del logo */
     height: auto;
 }
 
@@ -601,7 +601,7 @@ textarea {
     background: #000000;
     padding: 50px 0;
     text-align: center;
-    margin-bottom: 50px; /* Añade margen inferior para separar de Portafolio */
+    margin-bottom: 50px;
 }
 
 .reviewtitle {
@@ -612,54 +612,96 @@ textarea {
 }
 
 .reviewcarousel {
-    overflow: hidden;
-    width: 90%; /* Ajusta el ancho para que no ocupe toda la pantalla */
-    margin: 0 auto; /* Centra el carrusel */
     position: relative;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .reviewslide {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%; /* Cambia a 100% para que se ajuste a las 3 reseñas visibles */
+    transition: transform 1s ease-in-out; 1 /* Suaviza el desplazamiento */
 }
 
 .reviewitem {
-    flex: 0 0 33.33%; /* Cada reseña ocupa un tercio del carrusel */
+    flex: 0 0 100%; /* Una reseña a la vez en móvil */
     padding: 20px;
     background: #333333;
-    border-radius: 10px;
-    margin: 0 10px;
+    border-radius: 10px; /* Esquinas redondeadas */
+    margin: 0 15px; /* Separación entre reseñas */
     box-shadow: 0 4px 10px rgba(51, 51, 51, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 0; /* Evita que se desborde */
+    box-sizing: border-box;
+    min-height: 200px; /* Altura mínima */
 }
 
 .stars {
-    font-size: 20px;
-    color: #ffffff; /* Estrellas doradas */
-    margin-bottom: 10px;
+    font-size: 24px;
+    color: #ffffff; /* Estrellas en blanco */
+    margin-bottom: 15px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: nowrap; /* Evita que las estrellas se rompan */
+    width: 100%; /* Asegura que ocupe el ancho disponible */
+    justify-content: center; /* Centra las estrellas */
 }
 
 .reviewtext {
     font-style: italic;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-align: center;
-    max-width: 80%; /* Limita el ancho del texto */
+    max-width: 90%; /* Limita el ancho del texto */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden; /* Contiene el texto */
+    text-overflow: ellipsis; /* Puntos suspensivos si es largo */
+    padding: 0 10px; /* Padding interno */
 }
 
 .reviewauthor {
     font-weight: 600;
     color: #e0e0e0;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
     display: block;
+}
+
+/* Ajustes Responsivos */
+@media (min-width: 768px) {
+    .reviewitem {
+        flex: 0 0 30%; /* Ajustado para 3 reseñas con separación en escritorio */
+        margin: 0 15px; /* Mantener separación */
+    }
+}
+
+@media (max-width: 767px) {
+    .reviewtitle {
+        font-size: 28px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .reviewitem {
+        flex: 0 0 90%; /* Ajustado para dejar espacio a los márgenes */
+        max-width: 300px; /* Límite máximo */
+        margin: 0 15px; /* Separación entre reseñas */
+    }
+
+    .stars {
+        font-size: 20px; /* Reduce tamaño en móvil */
+    }
+
+    .reviewtext {
+        font-size: 14px; /* Tamaño ajustado */
+        max-height: 100px; /* Límite de altura */
+        overflow-y: auto; /* Scroll vertical si es largo */
+    }
 }
 
 /* Botón Flotante */
