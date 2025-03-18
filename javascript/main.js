@@ -362,3 +362,55 @@ const freemaninit = (function() {
 }());
 //initilizing app
 freemaninit.AppInit();
+
+document.addEventListener('DOMContentLoaded', function() {
+    const slide = document.querySelector('.reviewslide');
+    const items = document.querySelectorAll('.reviewitem');
+    let currentIndex = 0;
+    const totalItems = items.length;
+    const visibleItems = 3;
+    const itemWidth = 100 / visibleItems; // Ancho de cada grupo de 3
+
+    function updateSlide() {
+        const offset = -(currentIndex * (100 / totalItems)) * (totalItems / visibleItems);
+        slide.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateSlide();
+    }
+
+    // Cambia cada 5 segundos
+    setInterval(nextSlide, 5000);
+
+    // Inicializa la primera posición
+    updateSlide();
+});
+
+// Hacer que el logo regrese al inicio con desplazamiento suave
+document.querySelector('.logo').addEventListener('click', function(e) {
+    e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Botón flotante para regresar arriba
+document.querySelector('.scroll-top-btn').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Mostrar/Ocultar el botón según el scroll
+window.addEventListener('scroll', function() {
+    const scrollTopBtn = document.querySelector('.scroll-top-btn');
+    if (window.scrollY > 200) {
+        scrollTopBtn.style.display = 'flex';
+    } else {
+        scrollTopBtn.style.display = 'none';
+    }
+});

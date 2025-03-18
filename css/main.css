@@ -595,3 +595,96 @@ textarea {
     letter-spacing: 1px;
     color: #ffffff;
 }
+
+/* Sección de Reseñas */
+#reviewsection {
+    background: #000000;
+    padding: 50px 0;
+    text-align: center;
+    margin-bottom: 50px; /* Añade margen inferior para separar de Portafolio */
+}
+
+.reviewtitle {
+    font-size: 40px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.reviewcarousel {
+    overflow: hidden;
+    width: 90%; /* Ajusta el ancho para que no ocupe toda la pantalla */
+    margin: 0 auto; /* Centra el carrusel */
+    position: relative;
+}
+
+.reviewslide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Cambia a 100% para que se ajuste a las 3 reseñas visibles */
+}
+
+.reviewitem {
+    flex: 0 0 33.33%; /* Cada reseña ocupa un tercio del carrusel */
+    padding: 20px;
+    background: #333333;
+    border-radius: 10px;
+    margin: 0 10px;
+    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 0; /* Evita que se desborde */
+}
+
+.stars {
+    font-size: 20px;
+    color: #ffffff; /* Estrellas doradas */
+    margin-bottom: 10px;
+}
+
+.reviewtext {
+    font-style: italic;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    text-align: center;
+    max-width: 80%; /* Limita el ancho del texto */
+}
+
+.reviewauthor {
+    font-weight: 600;
+    color: #e0e0e0;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: block;
+}
+
+/* Botón Flotante */
+.scroll-top-btn {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-top-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
