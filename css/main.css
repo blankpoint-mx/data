@@ -538,6 +538,19 @@ textarea {
 * ----------------------------------------------------------------------------------------
 */
 
+.contactform__inputtext,
+.contactform__comentarea {
+    border-radius: 10px; /* Añade esquinas redondeadas */
+    /* Resto de los estilos existentes */
+    width: 100%;
+    background: #333333;
+    border: 0;
+    padding: 15px 20px;
+    font-size: 14px;
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+}
+
 #contactsection {
     height: auto;
     background: #000000; /* Fondo negro */
@@ -591,7 +604,7 @@ textarea {
 */
 
 .footwrap p {
-    font-size: 13px;
+    font-size: 11px;
     letter-spacing: 1px;
     color: #ffffff;
 }
@@ -729,4 +742,115 @@ textarea {
 .scroll-top-btn:hover {
     opacity: 1;
     transform: scale(1.1);
+}
+
+#faqsection {
+    background: #000000;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    background: #333333;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.5);
+}
+
+.faq-item summary {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px;
+    outline: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item p {
+    font-family: 'Lato', sans-serif; /* Cambia de Barlow a Lato */
+    font-size: 16px;
+    color: #e0e0e0;
+    margin: 10px 0 0 0;
+    padding: 0 20px;
+}
+
+#submitbutton {
+    display: block; /* Asegura que el botón sea un bloque */
+    margin: 0 auto; /* Centra el botón horizontalmente */
+    border-radius: 10px;
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/* Asegura que el contenedor del botón también permita el centrado */
+.contactform__form-group .col-lg-12.pt-4 {
+    text-align: left; /* Centra el contenido dentro de esta columna */
+}
+
+.required-star {
+    color: #ff0000; /* Asterisco rojo */
+    font-size: 16px;
+}
+
+.form-error {
+    color: #ff0000;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.thank-you-page {
+    background: #000000; /* Fondo negro como el resto del sitio */
+    min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center;
+}
+
+.thank-you-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.thank-you-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: none; /* Asegura que no esté en mayúsculas */
+}
+
+.thank-you-text {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 18px;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+}
+
+.thank-you-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
 }

@@ -49,8 +49,7 @@
                         <ul class="navpage__wrap">
                             <li class="navpage__list"><a href="#sectionhero" class="activelink">Inicio</a></li>
                             <li class="navpage__list"><a href="#aboutsection">Sobre Nosotros</a></li>
-                            <li class="navpage__list"><a href="#servicesection">Servicios</a></li>
-                            <li class="navpage__list"><a href="#portfoliosection">Portafolio</a></li>
+                            <li class="navpage__list"><a href="#faqsection">FAQ</a></li>                            <li class="navpage__list"><a href="#portfoliosection">Portafolio</a></li>
                             <li class="navpage__list"><a href="#contactsection">Contacto</a></li>
                         </ul>
                     </nav>
@@ -64,7 +63,7 @@
             <ul class="overlay__listnav">
                 <li class="navpage__list"><a href="#sectionhero">Inicio</a></li>
                 <li><a href="#aboutsection">Sobre Nosotros</a></li>
-                <li><a href="#servicesection">Servicios</a></li>
+                <li><a href="#faqsection">FAQ</a></li>                
                 <li><a href="#portfoliosection">Portafolio</a></li>
                 <li><a href="#contactsection">Contacto</a></li>
             </ul>
@@ -228,6 +227,41 @@
         </div>
     </section>
 
+    <div id="faqsection" class="sectionblock">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-title">FAQ</h2>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="faq-list">
+                        <details class="faq-item">
+                            <summary>¿Qué pasa si el producto no es lo que esperaba?</summary>
+                            <p>Si no cumple tus expectativas, puedes devolverlo o cambiarlo dentro de los 7 días, siempre que no esté usado. Te reembolsamos o cambiamos sin problema.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>¿Tengo que pagar por adelantado?</summary>
+                            <p>No, puedes pagar al recibir tu funda en casa. Tú decides cómo prefieres hacerlo.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>¿Ofrecen meses sin intereses?</summary>
+                            <p>Sí, ofrecemos 3, 6, 9 y 12 meses sin intereses en compras mayores a 500 MXN con tarjeta de crédito participante. Contáctanos para más detalles.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>¿Quiénes son Blank Point?</summary>
+                            <p>Somos Blank Point, el único lugar en Culiacán con más de 100 diseños de fundas. Llevamos 4 años ofreciendo calidad, variedad y servicio a domicilio confiable.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>¿Hacen envíos a domicilio?</summary>
+                            <p>Sí, llevamos tu funda a tu puerta con un servicio rápido y confiable. Con 4 años de experiencia, garantizamos tu satisfacción.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="portfoliosection" class="sectionblock">
         <div class="container">
             <div class="row">
@@ -341,19 +375,20 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="contactform">
-                            <form action="#" id="formcontact" class="contactform" data-netlify="true" method="POST" name="contact-form">
+                            <form action="/thank-you" id="formcontact" class="contactform" data-netlify="true" method="POST" name="contact-form">
                                 <div class="contactform__form-group row">
                                     <div class="col-lg-12 pt-4">
-                                        <label for="yourname" class="pb-2">Tu nombre</label>
-                                        <input type="text" id="yourname" class="contactform__inputtext input-control" placeholder="Tu nombre" name="name" />
+                                        <label for="yourname" class="pb-2">Tu nombre <span class="required-star">*</span></label>
+                                        <input type="text" id="yourname" class="contactform__inputtext input-control" placeholder="Tu nombre" name="name" required />
                                     </div>
                                     <div class="col-lg-12 pt-4">
-                                        <label for="yourmail" class="pb-2">Tu Email</label>
-                                        <input type="email" id="yourmail" class="contactform__inputtext input-control" placeholder="Tu email" name="email" />
+                                        <label for="yourmail" class="pb-2">Tu Email <span class="required-star">*</span></label>
+                                        <input type="email" id="yourmail" class="contactform__inputtext input-control" placeholder="Tu email" name="email" required />
                                     </div>
                                     <div class="col-lg-12 pt-4">
-                                        <label for="comment" class="pb-2">Tu Mensaje</label>
-                                        <textarea class="contactform__comentarea input-control" id="comment" placeholder="Escribe tu mensaje" name="comment"></textarea>
+                                        <label for="comment" class="pb-2">Tu Mensaje <span class="required-star">*</span></label>
+                                        <textarea class="contactform__comentarea input-control" id="comment" placeholder="Escribe tu mensaje" name="comment" required></textarea>
+                                        <div id="form-error" class="form-error" style="display: none;">Por favor, completa todos los campos obligatorios.</div>
                                         <button id="submitbutton" class="btn mt-5 contactform__submitbuton linkbtn mt-5 mb-3" type="submit">Enviar</button>
                                     </div>
                                 </div>
