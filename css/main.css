@@ -853,3 +853,22 @@ textarea {
     border-radius: 10px;
     text-decoration: none;
 }
+
+#instagramsection .elfsight-app-2ccfa2d6-1274-4fc8-8973-c5d4c72669e6 {
+    max-width: 1200px; /* Ajusta el ancho máximo según tu diseño */
+    margin: 0 auto; /* Centra el widget horizontalmente */
+    display: block; /* Asegura que el contenedor sea un bloque */
+}
+
+/* Asegura que el contenedor interno del feed también esté centrado */
+#instagramsection .eapps-instagram-feed {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    flex-wrap: wrap; /* Permite que los posts se ajusten en varias filas */
+}
+
+/* Oculta la marca de agua de Elfsight */
+.eapps-link,
+.eapps-widget-toolbar {
+    display: none !important;
+}
