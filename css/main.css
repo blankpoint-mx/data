@@ -25,10 +25,6 @@ Filename      : main.css
 @import url(./vendor/keen-slider.css);
 @import url(./vendor/glightbox.css);
 
-#tawkchat-container {
-    font-family: 'Montserrat', sans-serif !important;
-}
-
 /*
 * ----------------------------------------------------------------------------------------
 * 01.BASE CSS. 
