@@ -25,6 +25,10 @@ Filename      : main.css
 @import url(./vendor/keen-slider.css);
 @import url(./vendor/glightbox.css);
 
+#tawkchat-container {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
 /*
 * ----------------------------------------------------------------------------------------
 * 01.BASE CSS. 
@@ -208,8 +212,8 @@ textarea {
 }
 
 .headerwrap__logo img {
-    width: 180px; /* Tamaño reducido del logo */
-    height: auto;
+    width: auto; /* Tamaño reducido del logo */
+    height: auto; /* Ajusta la altura del logo */
 }
 
 .navicon {
@@ -871,4 +875,203 @@ textarea {
 .eapps-link,
 .eapps-widget-toolbar {
     display: none !important;
+}
+
+/* Optimizar imágenes */
+.heroimg__poto, .porfoliowarp__content {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Lazy loading para el portfolio */
+.porfoliowarp__content {
+    background-attachment: scroll; /* Mejor performance que fixed */
+}
+
+/* Estilos para las imágenes de reseñas */
+.review-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: block;
+    object-fit: cover;
+    border: 2px solid #ffffff; /* Borde blanco */
+    box-shadow: 0 2px 5px rgba(51, 51, 51, 0.3); /* Sombra suave */
+}
+
+/* Ajustar el padding del reviewitem para incluir la imagen */
+.reviewitem {
+    padding: 25px 15px; /* Aumenta el padding para dar espacio a la imagen */
+    min-height: 250px; /* Aumenta la altura mínima para incluir la imagen */
+}
+
+/* Asegurar que el texto no se desborde con la imagen */
+.reviewtext {
+    max-height: 80px; /* Reduce la altura máxima para ajustar con la imagen */
+}
+
+/* Sección Quiénes Somos */
+#teamsection {
+    background: #000000; /* Fondo negro */
+    padding: 50px 0;
+    text-align: center;
+}
+
+.team-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.team-item {
+    background: #333333; /* Fondo gris */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.5); /* Sombra gris */
+    opacity: 0; /* Para la animación de entrada */
+    transform: translateY(20px); /* Para la animación de entrada */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.team-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.team-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff; /* Texto blanco */
+    margin-bottom: 15px;
+}
+
+.team-text {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 16px;
+    color: #e0e0e0; /* Texto gris claro */
+    line-height: 1.6;
+}
+
+.team-values {
+    padding: 0;
+    list-style: none;
+}
+
+.team-values li {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 16px;
+    color: #e0e0e0; /* Texto gris claro */
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.value-highlight {
+    font-weight: 600;
+    color: #ffffff; /* Resaltado en blanco */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .team-title {
+        font-size: 20px;
+    }
+
+    .team-text, .team-values li {
+        font-size: 14px;
+    }
+
+    .team-item {
+        padding: 15px;
+    }
+}
+
+/* Sección Mapa Interactivo */
+#mapsection {
+    background: #000000; /* Fondo negro */
+    padding: 50px 0;
+    text-align: center;
+}
+
+.map-description {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 18px;
+    color: #e0e0e0; /* Texto gris claro */
+    margin-bottom: 30px;
+}
+
+/* Estilo del mapa en blanco y negro */
+#map {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.5); /* Sombra gris */
+}
+
+/* Filtro blanco y negro para los tiles del mapa */
+.leaflet-tile {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+/* Estilo del popup del mapa */
+.leaflet-popup-content-wrapper {
+    background: #333333; /* Fondo gris */
+    color: #ffffff; /* Texto blanco */
+    border-radius: 5px;
+}
+
+.leaflet-popup-tip {
+    background: #333333; /* Punta del popup en gris */
+}
+
+.leaflet-popup-content {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 14px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .map-description {
+        font-size: 16px;
+    }
+
+    #map {
+        height: 300px; /* Reduce altura en móviles */
+    }
+}
+
+/* Animación de entrada para faq-item */
+.faq-item {
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(20px); /* Desplazamiento inicial */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.faq-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación suave para el contenido de details */
+.faq-item .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-item[open] .faq-content {
+    max-height: 200px; /* Ajusta según el contenido */
+}
+
+/* Asegurar que el summary no se vea afectado por la transición */
+.faq-item summary {
+    transition: none;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .faq-item[open] .faq-content {
+        max-height: 300px; /* Más espacio en móviles */
+    }
 }

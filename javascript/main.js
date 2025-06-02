@@ -22,10 +22,6 @@ const freemaninit = (function() {
     var goup = document.querySelector('.scroll-top');
     var sliderService = document.getElementById("sliderservice");
     var yearele = document.querySelector('.years');
-    var btnContainer = document.getElementById("filterwrap");
-    var btns = btnContainer.getElementsByTagName("li");
-    var porto = document.getElementById('porfoliowarp');
-    var Shuffle = window.Shuffle;
     var wrapper;
     var dots;
     var typedText = document.querySelector("#typed-text");
@@ -73,29 +69,6 @@ const freemaninit = (function() {
             selector: 'glightboxvideo',
         });
         GLightbox();
-    };
-
-    // shuffle portfolio
-    const portofolio = function(e) {
-        var myShuffle = new Shuffle(porto, {
-            itemSelector: '.porfoliowarp__item',
-            buffer: 0,
-            columnThreshold: 0.01,
-            columnWidth: 0,
-            delimiter: null,
-            sizer: null,
-            speed: 250,
-            filterMode: Shuffle.FilterMode.ANY,
-            group: Shuffle.ALL_ITEMS,
-        });
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function(e) {
-                document.querySelector('.active').classList.remove('active');
-                (document.querySelector('.active')) ? document.querySelector('.active').classList.remove('active') : '';
-                this.classList.add('active');
-                myShuffle.filter(e.target.dataset.group);
-            });
-        }
     };
 
     // scroll spy 
@@ -374,15 +347,14 @@ document.addEventListener('DOMContentLoaded', function() {
         return window.innerWidth < 768 ? 1 : 3;
     }
 
-    function updateSlide() {
-        const visibleItems = getVisibleItems();
-        const itemWidthPercentage = 100 / visibleItems;
-        const marginAdjustment = visibleItems === 1 ? 5 : 2;
-        const displacementFactor = 1;
-        const offset = -(currentIndex * (itemWidthPercentage + marginAdjustment) * displacementFactor);
-        slide.style.transform = `translateX(${offset}%)`;
-    }
-
+function updateSlide() {
+    const visibleItems = getVisibleItems();
+    const itemWidthPercentage = 100 / visibleItems;
+    const marginAdjustment = visibleItems === 1 ? 5 : 3; // Ajuste de márgenes
+    const displacementFactor = 1;
+    const offset = -(currentIndex * (itemWidthPercentage + marginAdjustment) * displacementFactor);
+    slide.style.transform = `translateX(${offset}%)`;
+}
     function nextSlide() {
         const visibleItems = getVisibleItems();
         currentIndex++;
@@ -432,3 +404,73 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Animación para la sección Quiénes Somos
+document.addEventListener('DOMContentLoaded', function() {
+    const teamItems = document.querySelectorAll('.team-item');
+
+    const isScrolledIntoView = (el) => {
+        const rect = el.getBoundingClientRect();
+        const elemTop = rect.top;
+        const elemBottom = rect.bottom;
+        return (elemTop >= 0) && (elemBottom <= window.innerHeight + 100);
+    };
+
+    const showTeamItems = () => {
+        teamItems.forEach((item, index) => {
+            if (isScrolledIntoView(item) && !item.classList.contains('visible')) {
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, index * 200); // Retraso para cada elemento
+            }
+        });
+    };
+
+    window.addEventListener('scroll', showTeamItems);
+    window.addEventListener('resize', showTeamItems);
+    showTeamItems(); // Verifica al cargar la página
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Animación de entrada para los faq-item
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    const isScrolledIntoView = (el) => {
+        const rect = el.getBoundingClientRect();
+        const elemTop = rect.top;
+        const elemBottom = rect.bottom;
+        return (elemTop >= 0) && (elemBottom <= window.innerHeight + 100);
+    };
+
+    const showFaqItems = () => {
+        faqItems.forEach((item, index) => {
+            if (isScrolledIntoView(item) && !item.classList.contains('visible')) {
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, index * 200); // Retraso progresivo para cada pregunta
+            }
+        });
+    };
+
+    window.addEventListener('scroll', showFaqItems);
+    window.addEventListener('resize', showFaqItems);
+    showFaqItems();
+
+    // Ajustar dinámicamente max-height para la animación de apertura/cierre
+    faqItems.forEach(item => {
+        const content = item.querySelector('p');
+        // Envuelve el contenido en un div para la animación
+        const wrapper = document.createElement('div');
+        wrapper.className = 'faq-content';
+        content.parentNode.insertBefore(wrapper, content);
+        wrapper.appendChild(content);
+
+        // Ajusta max-height dinámicamente
+        item.addEventListener('toggle', () => {
+            if (item.open) {
+                wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
+            } else {
+                wrapper.style.maxHeight = '0';
+            }
+        });
+    });
+});

@@ -60,10 +60,11 @@
                 </div>
                 <div class="col-lg-10 text-xl-left d-none d-lg-block justify-content-lg-left justify-content-xl-left">
                     <nav class="navpage text-left">
-                        <ul class="navpage__wrap">
+                       <ul class="navpage__wrap">
                             <li class="navpage__list"><a href="#sectionhero" class="activelink">Inicio</a></li>
                             <li class="navpage__list"><a href="#aboutsection">Sobre Nosotros</a></li>
-                            <li class="navpage__list"><a href="#faqsection">FAQ</a></li>                            <li class="navpage__list"><a href="#portfoliosection">Portafolio</a></li>
+                            <li class="navpage__list"><a href="#faqsection">FAQ</a></li>
+                            <li class="navpage__list"><a href="#teamsection">Quiénes Somos</a></li>
                             <li class="navpage__list"><a href="#contactsection">Contacto</a></li>
                         </ul>
                     </nav>
@@ -73,12 +74,11 @@
     </header>
 
     <div class="overlay">
-        <div class="overlay__navigation">
             <ul class="overlay__listnav">
                 <li class="navpage__list"><a href="#sectionhero">Inicio</a></li>
                 <li><a href="#aboutsection">Sobre Nosotros</a></li>
-                <li><a href="#faqsection">FAQ</a></li>                
-                <li><a href="#portfoliosection">Portafolio</a></li>
+                <li><a href="#faqsection">FAQ</a></li>
+                <li><a href="#teamsection">Quiénes Somos</a></li>
                 <li><a href="#contactsection">Contacto</a></li>
             </ul>
         </div>
@@ -181,65 +181,86 @@
         </div>
     </div>
 
+
     <section id="reviewsection">
-        <div class="reviewwrap">
-            <h2 class="reviewtitle">Lo que dicen nuestros clientes</h2>
-            <div class="reviewcarousel">
-                <div class="reviewslide">
-                    <div class="reviewitem">
-                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                        <p class="reviewtext"><i>"¡Excelente servicio, muy profesionales!"</i></p>
-                        <span class="reviewauthor">Juan</span>
-                    </div>
-                    <div class="reviewitem">
-                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
-                        <p class="reviewtext"><i>"Buen diseño, cumplió con mis expectativas."</i></p>
-                        <span class="reviewauthor">María</span>
-                    </div>
-                    <div class="reviewitem">
-                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                        <p class="reviewtext"><i>"Increíble atención y calidad."</i></p>
-                        <span class="reviewauthor">Pedro</span>
-                    </div>
-                    <div class="reviewitem">
-                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                        <p class="reviewtext"><i>"Trabajo impecable, lo recomiendo."</i></p>
-                        <span class="reviewauthor">Ana</span>
-                    </div>
-                    <div class="reviewitem">
-                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
-                        <p class="reviewtext"><i>"Muy buen servicio, solo faltó un detalle."</i></p>
-                        <span class="reviewauthor">Luis</span>
-                    </div>
-                    <div class="reviewitem">
-                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                        <p class="reviewtext"><i>"Calidad superior, volveré a contratar."</i></p>
-                        <span class="reviewauthor">Sofía</span>
-                    </div>
-                    <div class="reviewitem">
-                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                        <p class="reviewtext"><i>"Todo perfecto, entrega a tiempo."</i></p>
-                        <span class="reviewauthor">Carlos</span>
-                    </div>
-                    <div class="reviewitem">
-                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
-                        <p class="reviewtext"><i>"Buena experiencia, podría mejorar el precio."</i></p>
-                        <span class="reviewauthor">Elena</span>
-                    </div>
-                    <div class="reviewitem">
-                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                        <p class="reviewtext"><i>"Profesionalismo de primera."</i></p>
-                        <span class="reviewauthor">Jorge</span>
-                    </div>
-                    <div class="reviewitem">
-                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                        <p class="reviewtext"><i>"Excedieron mis expectativas."</i></p>
-                        <span class="reviewauthor">Lucía</span>
-                    </div>
+    <div class="reviewwrap">
+        <h2 class="reviewtitle">Lo que dicen nuestros clientes</h2>
+        <div class="reviewcarousel">
+            <div class="reviewslide">
+                <!-- Reseña 1 -->
+                <div class="reviewitem">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Juan" class="review-image">
+                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                    <p class="reviewtext"><i>"¡Excelente servicio, muy profesionales!"</i></p>
+                    <span class="reviewauthor">Juan</span>
+                </div>
+                <!-- Reseña 2 -->
+                <div class="reviewitem">
+                    <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="María" class="review-image">
+                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+                    <p class="reviewtext"><i>"Buen diseño, cumplió con mis expectativas."</i></p>
+                    <span class="reviewauthor">María</span>
+                </div>
+                <!-- Reseña 3 -->
+                <div class="reviewitem">
+                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Pedro" class="review-image">
+                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                    <p class="reviewtext"><i>"Increíble atención y calidad."</i></p>
+                    <span class="reviewauthor">Pedro</span>
+                </div>
+                <!-- Reseña 4 -->
+                <div class="reviewitem">
+                    <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Ana" class="review-image">
+                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                    <p class="reviewtext"><i>"Trabajo impecable, lo recomiendo."</i></p>
+                    <span class="reviewauthor">@ann.munann</span>
+                </div>
+                <!-- Reseña 5 -->
+                <div class="reviewitem">
+                    <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Luis" class="review-image">
+                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+                    <p class="reviewtext"><i>"Muy buen servicio, solo faltó un detalle."</i></p>
+                    <span class="reviewauthor">@azulcrema98</span>
+                </div>
+                <!-- Reseña 6 -->
+                <div class="reviewitem">
+                    <img src="https://randomuser.me/api/portraits/women/6.jpg" alt="Sofía" class="review-image">
+                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                    <p class="reviewtext"><i>"Calidad superior, volveré a contratar."</i></p>
+                    <span class="reviewauthor">@sofia.gascon</span>
+                </div>
+                <!-- Reseña 7 -->
+                <div class="reviewitem">
+                    <img src="https://randomuser.me/api/portraits/men/7.jpg" alt="Carlos" class="review-image">
+                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                    <p class="reviewtext"><i>"Todo perfecto, entrega a tiempo."</i></p>
+                    <span class="reviewauthor">@velvel</span>
+                </div>
+                <!-- Reseña 8 -->
+                <div class="reviewitem">
+                    <img src="https://randomuser.me/api/portraits/women/8.jpg" alt="Elena" class="review-image">
+                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+                    <p class="reviewtext"><i>"Buena experiencia, podría mejorar el precio."</i></p>
+                    <span class="reviewauthor">@ellie.04</span>
+                </div>
+                <!-- Reseña 9 -->
+                <div class="reviewitem">
+                    <img src="https://randomuser.me/api/portraits/men/9.jpg" alt="Jorge" class="review-image">
+                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                    <p class="reviewtext"><i>"Profesionalismo de primera."</i></p>
+                    <span class="reviewauthor">@jorge_gzl</span>
+                </div>
+                <!-- Reseña 10 -->
+                <div class="reviewitem">
+                    <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="Lucía" class="review-image">
+                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                    <p class="reviewtext"><i>"Excedieron mis expectativas."</i></p>
+                    <span class="reviewauthor">Alejandra</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <div id="faqsection" class="sectionblock">
         <div class="container">
@@ -289,80 +310,36 @@
         </div>
     </div>
 
-    <div id="portfoliosection" class="sectionblock">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 mt-3 mb-4 pt-3 text-center">
-                    <h2 class="section-title">Portafolio</h2>
-                    <div class="warpfilter text-left">
-                        <ul id="filterwrap" class="warpfilter__filter justify-content-left text-center text-lg-left">
-                            <li data-group="all" class="active">Todos</li>
-                            <li data-group="reparaciones">Reparaciones</li>
-                            <li data-group="fundas">Fundas</li>
+    <div id="teamsection" class="sectionblock">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-title">Quiénes Somos</h2>
+            </div>
+            <div class="col-lg-12">
+                <div class="team-content">
+                    <div class="team-item">
+                        <h3 class="team-title">Nuestra Misión</h3>
+                        <p class="team-text">Ofrecer soluciones confiables y personalizadas para la reparación y protección de iPhones, con un servicio a domicilio eficiente y de calidad en Culiacán, Sinaloa, para que nuestros clientes disfruten de sus dispositivos sin preocupaciones.</p>
+                    </div>
+                    <div class="team-item">
+                        <h3 class="team-title">Nuestra Visión</h3>
+                        <p class="team-text">Ser la empresa líder en reparación y personalización de iPhones en Culiacán, reconocida por nuestra calidad, confianza y cercanía con los clientes, expandiendo nuestro impacto a más ciudades de Sinaloa.</p>
+                    </div>
+                    <div class="team-item">
+                        <h3 class="team-title">Nuestros Valores</h3>
+                        <ul class="team-values">
+                            <li><span class="value-highlight">Calidad:</span> Nos esforzamos por entregar resultados impecables en cada reparación y funda personalizada.</li>
+                            <li><span class="value-highlight">Confianza:</span> Construimos relaciones basadas en la transparencia y la honestidad con nuestros clientes.</li>
+                            <li><span class="value-highlight">Cercanía:</span> Estamos cerca de ti, con un servicio a domicilio que se adapta a tus necesidades.</li>
+                            <li><span class="value-highlight">Profesionalismo:</span> Nuestro equipo está capacitado para ofrecerte el mejor servicio en todo momento.</li>
                         </ul>
                     </div>
-                    <div id="porfoliowarp" class="grid-gutter-md grid-col-3">
-                        <!-- Fundas -->
-                        <div class="porfoliowarp__item" data-groups='["fundas"]'>
-                            <a class="porfoliowarp__portolink glightbox" data-glightbox="type: image" href="asset/portfolio/fundas/funda1.jpg">
-                                <i class="fa-solid fa-circle-plus"></i>
-                                <div class="porfoliowarp__content" style="background: url(asset/portfolio/fundas/funda1.jpg) no-repeat center; background-position: center; background-size: cover;"></div>
-                            </a>
-                        </div>
-                        <div class="porfoliowarp__item" data-groups='["fundas"]'>
-                            <a class="porfoliowarp__portolink glightbox" data-glightbox="type: image" href="asset/portfolio/fundas/funda2.jpg">
-                                <i class="fa-solid fa-circle-plus"></i>
-                                <div class="porfoliowarp__content" style="background: url(asset/portfolio/fundas/funda2.jpg) no-repeat center; background-position: center; background-size: cover;"></div>
-                            </a>
-                        </div>
-                        <div class="porfoliowarp__item" data-groups='["fundas"]'>
-                            <a class="porfoliowarp__portolink glightbox" data-glightbox="type: image" href="asset/portfolio/fundas/funda3.jpg">
-                                <i class="fa-solid fa-circle-plus"></i>
-                                <div class="porfoliowarp__content" style="background: url(asset/portfolio/fundas/funda3.jpg) no-repeat center; background-position: center; background-size: cover;"></div>
-                            </a>
-                        </div>
-                        <div class="porfoliowarp__item" data-groups='["fundas"]'>
-                            <a class="porfoliowarp__portolink glightbox" data-glightbox="type: image" href="asset/portfolio/fundas/funda4.jpg">
-                                <i class="fa-solid fa-circle-plus"></i>
-                                <div class="porfoliowarp__content" style="background: url(asset/portfolio/fundas/funda4.jpg) no-repeat center; background-position: center; background-size: cover;"></div>
-                            </a>
-                        </div>
-                        <div class="porfoliowarp__item" data-groups='["fundas"]'>
-                            <a class="porfoliowarp__portolink glightbox" data-glightbox="type: image" href="asset/portfolio/fundas/funda5.jpg">
-                                <i class="fa-solid fa-circle-plus"></i>
-                                <div class="porfoliowarp__content" style="background: url(asset/portfolio/fundas/funda5.jpg) no-repeat center; background-position: center; background-size: cover;"></div>
-                            </a>
-                        </div>
-                        <!-- Reparaciones -->
-                        <div class="porfoliowarp__item" data-groups='["reparaciones"]'>
-                            <a class="porfoliowarp__portolink glightbox" data-glightbox="type: image" href="asset/portfolio/reparaciones/reparacion1.jpg">
-                                <i class="fa-solid fa-circle-plus"></i>
-                                <div class="porfoliowarp__content" style="background: url(asset/portfolio/reparaciones/reparacion1.jpg) no-repeat center; background-position: center; background-size: cover;"></div>
-                            </a>
-                        </div>
-                        <div class="porfoliowarp__item" data-groups='["reparaciones"]'>
-                            <a class="porfoliowarp__portolink glightbox" data-glightbox="type: image" href="asset/portfolio/reparaciones/reparacion2.jpg">
-                                <i class="fa-solid fa-circle-plus"></i>
-                                <div class="porfoliowarp__content" style="background: url(asset/portfolio/reparaciones/reparacion2.jpg) no-repeat center; background-position: center; background-size: cover;"></div>
-                            </a>
-                        </div>
-                        <div class="porfoliowarp__item" data-groups='["reparaciones"]'>
-                            <a class="porfoliowarp__portolink glightbox" data-glightbox="type: image" href="asset/portfolio/reparaciones/reparacion3.jpg">
-                                <i class="fa-solid fa-circle-plus"></i>
-                                <div class="porfoliowarp__content" style="background: url(asset/portfolio/reparaciones/reparacion3.jpg) no-repeat center; background-position: center; background-size: cover;"></div>
-                            </a>
-                        </div>
-                        <div class="porfoliowarp__item" data-groups='["reparaciones"]'>
-                            <a class="porfoliowarp__portolink glightbox" data-glightbox="type: image" href="asset/portfolio/reparaciones/reparacion4.jpg">
-                                <i class="fa-solid fa-circle-plus"></i>
-                                <div class="porfoliowarp__content" style="background: url(asset/portfolio/reparaciones/reparacion4.jpg) no-repeat center; background-position: center; background-size: cover;"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <a href="#" class="btn linkbtn mt-5">Más Proyectos</a>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
         <div id="contactsection" class="sectionblock">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
