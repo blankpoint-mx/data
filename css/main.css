@@ -212,8 +212,10 @@ textarea {
 }
 
 .headerwrap__logo img {
-    width: auto; /* Tamaño reducido del logo */
+    width: 200px; /* Tamaño reducido del logo */
     height: auto; /* Ajusta la altura del logo */
+    align-items: center
+    ;
 }
 
 .navicon {
